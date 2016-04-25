@@ -1,0 +1,39 @@
+doctype html
+html(lang='en')
+    html(lang='en')
+        head
+            meta(charset='UTF-8')
+            title Grade Tracker
+            script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+            script(src="./main.js")
+        body
+            h1 Grade Tracker
+            table
+                tr
+                    td Name
+                    td Student Score
+                    td Total Score
+                    td Letter Grade
+
+                -
+                    list = things
+                each item in list
+                    tr(id= item.id)
+                        td= item.assignment
+                        td= item.score
+                        td= item.total
+                        td= item.letter
+                        td
+                            button.delete Delete
+                        td
+                            button.update Update
+            form
+                input#assignment(type='text', placeholder='Assignment')
+                input#grade(type='text', placeholder='Student Grade')
+                input#total(type='text', placeholder='Total Possible Grade')
+                button#enter(type='submit') Submit Grade
+            form
+                input#editassignment(type='text', placeholder='Assignment')
+                input#editgrade(type='text', placeholder='Student Grade')
+                input#edittotal(type='text', placeholder='Total Possible Grade')
+                button#update(type='submit') Update This Grade
